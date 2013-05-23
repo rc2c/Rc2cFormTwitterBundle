@@ -21,7 +21,7 @@
         "symfony/form": ">=2.1"
     },
     "autoload": {
-        "psr-0": { "Rc2c\\Rc2cMultiSelectBundle": "" }
+        "psr-0": { "Rc2c\\MultiSelectBundle": "" }
     },
-    "target-dir": "Rc2c/Rc2cMultiSelectBundle"
+    "target-dir": "Rc2c/MultiSelectBundle"
 }
