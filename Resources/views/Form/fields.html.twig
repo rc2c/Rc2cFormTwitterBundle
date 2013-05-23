@@ -1,0 +1,98 @@
+{% block multiselectchoice_widget %}
+    {% spaceless %}
+        <script src="{{ asset('bundles/rc2cmultiselect/js/bootstrap-multiselect.js') }}" type="text/javascript"></script>
+        <div class="btn-group">
+        {{ block('choice_widget') }}
+        {% if btnSelectAll %}
+            <button class="btn btn-primary" id="{{ id }}-toggle">{{'Select all' | trans}}</button>
+        {% endif %}
+        </div>
+        <script language="javascript">
+        /**
+        * Gets whether all the options are selected
+        * @param {jQuery} $el
+        * @returns {bool}
+        */
+        function multiselect_selected($el) {
+            var ret = true;
+            $('option', $el).each(function(element) {
+                if (!!!$(this).attr('selected')) {
+                    ret = false;
+                }
+            });
+            return ret;
+        }
+        /**
+        * Selects all the options
+        * @param {jQuery} $el
+        * @returns {undefined}
+        */
+        function multiselect_selectAll($el) {
+            $('option', $el).each(function(element) {
+                $el.multiselect('select', $(this).val());
+            });
+            console.log($('option[selected]', $el).length)
+        }
+        /**
+        * Deselects all the options
+        * @param {jQuery} $el
+        * @returns {undefined}
+        */
+        function multiselect_deselectAll($el) {
+            $('option', $el).each(function(element) {
+                $el.multiselect('deselect', $(this).val());
+            });
+            console.log($('option[selected]', $el).length)
+        }
+        /**
+        * Clears all the selected options
+        * @param {jQuery} $el
+        * @returns {undefined}
+        */
+        function multiselect_toggle($el, $btn) {
+            if (multiselect_selected($el)) {
+                multiselect_deselectAll($el);
+                $btn.text("{{'Select all' | trans}}");
+            }
+            else {
+                multiselect_selectAll($el);
+                $btn.text("{{'Deselect all' | trans}}");
+            }
+        }
+
+        $(document).ready(function() {
+            $('#{{ id }}').multiselect({
+                buttonContainer: '<span />',
+                buttonClass: 'btn btn-small',
+                buttonClass: "{{ buttonClass }}",
+                maxHeight: {{ maxHeight == false ? 'false' : maxHeight }},
+                buttonText: function(options, select) {
+                    if (options.length == 0) {
+                        return '{{ 'None selected' | trans }} <b class="caret"></b>';
+                    }
+                    else if (options.length > 3) {
+                        return options.length + ' {{ 'selected' | trans }} <b class="caret"></b>';
+                    }
+                    else {
+                        var selected = '';
+                        options.each(function() {
+                            selected += $(this).text() + ', ';
+                        });
+                        return selected.substr(0, selected.length -2) + ' <b class="caret"></b>';
+                    }
+                },
+            });
+            {% if btnSelectAll %}
+            $("#{{ id }}-toggle").click(function(e) {
+                e.preventDefault();
+                
+                multiselect_toggle($("#{{ id }}"), $(this));
+            });
+            if (multiselect_selected($("#{{ id }}"))) {
+                $("#{{ id }}-toggle").text("{{'Deselect all' | trans}}");
+            }
+            {% endif %}
+        });
+        </script>
+    {% endspaceless %}
+{% endblock %}
