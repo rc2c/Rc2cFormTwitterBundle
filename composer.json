@@ -1,6 +1,5 @@
 {
     "name": "rc2c/multi-select-bundle",
-    "type": "symfony-bundle",
     "description": "Implementation of Bootstrap Multiselect jquery plugin for Symfony 2",
     "keywords": ["form", "bootstrap", "multiselect", "symfony2"],
     "homepage": "https://github.com/rc2c/Rc2cMultiSelectBundle",
