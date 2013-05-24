@@ -4,7 +4,7 @@
         <div class="btn-group">
         {{ block('choice_widget') }}
         {% if btnSelectAll %}
-            <button class="btn btn-primary" id="{{ id }}-toggle">{{'Select all' | trans}}</button>
+            <button class="btn btn-primary" id="{{ id }}-toggle">{{'Select all' | trans({}, 'Rc2cMultiSelectBundle')}}</button>
         {% endif %}
         </div>
         <script language="javascript">
@@ -52,11 +52,11 @@
         function multiselect_toggle($el, $btn) {
             if (multiselect_selected($el)) {
                 multiselect_deselectAll($el);
-                $btn.text("{{'Select all' | trans}}");
+                $btn.text("{{'Select all' | trans({}, 'Rc2cMultiSelectBundle')}}");
             }
             else {
                 multiselect_selectAll($el);
-                $btn.text("{{'Deselect all' | trans}}");
+                $btn.text("{{'Deselect all' | trans({}, 'Rc2cMultiSelectBundle')}}");
             }
         }
 
@@ -68,10 +68,10 @@
                 maxHeight: {{ maxHeight == false ? 'false' : maxHeight }},
                 buttonText: function(options, select) {
                     if (options.length == 0) {
-                        return '{{ 'None selected' | trans }} <b class="caret"></b>';
+                        return '{{ 'None selected' | trans({}, 'Rc2cMultiSelectBundle') }} <b class="caret"></b>';
                     }
                     else if (options.length > 3) {
-                        return options.length + ' {{ 'selected' | trans }} <b class="caret"></b>';
+                        return options.length + ' {{ 'selected' | trans({}, 'Rc2cMultiSelectBundle') }} <b class="caret"></b>';
                     }
                     else {
                         var selected = '';
@@ -89,7 +89,7 @@
                 multiselect_toggle($("#{{ id }}"), $(this));
             });
             if (multiselect_selected($("#{{ id }}"))) {
-                $("#{{ id }}-toggle").text("{{'Deselect all' | trans}}");
+                $("#{{ id }}-toggle").text("{{'Deselect all' | trans({}, 'Rc2cMultiSelectBundle')}}");
             }
             {% endif %}
         });

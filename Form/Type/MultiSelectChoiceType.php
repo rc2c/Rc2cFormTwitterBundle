@@ -26,6 +26,11 @@ class MultiSelectChoiceType extends AbstractType
             'buttonClass'  => 'btn',
             'maxHeight'    => false,
         ));
+
+        $resolver->addAllowedValues(array(
+            'expanded' => array(false),
+            'multiple' => array(true),
+        ));
     }
 
     /**
