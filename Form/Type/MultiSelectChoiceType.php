@@ -1,6 +1,6 @@
 <?php
 
-namespace Rc2c\MultiSelectBundle\Form\Type;
+namespace Rc2c\FormTwitterBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormInterface;

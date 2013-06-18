@@ -1,6 +1,6 @@
 <?php
 
-namespace Rc2c\Rc2cFormTwitterBundle\DependencyInjection;
+namespace Rc2c\FormTwitterBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;

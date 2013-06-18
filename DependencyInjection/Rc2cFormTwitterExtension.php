@@ -1,6 +1,6 @@
 <?php
 
-namespace Rc2c\Rc2cFormTwitterBundle\DependencyInjection;
+namespace Rc2c\FormTwitterBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;

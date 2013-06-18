@@ -1,6 +1,6 @@
 <?php
 
-namespace Rc2c\Rc2cFormTwitterBundle;
+namespace Rc2c\FormTwitterBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
