@@ -1,10 +1,7 @@
-Rc2cMultiSelectBundle
+Rc2cFormTwitterBundle
 =====================
 
-This bundle provides a symfony 2 form type multiselect powered by twitter bootstrap.
-
-The Bootstrap Multiselect jquery plugin present in this bundle is from [davidstutz](https://github.com/davidstutz/bootstrap-multiselect).
-
+This bundle provides symfony 2 form types powered by twitter bootstrap.
 
 ## Requirements
 
@@ -16,20 +13,21 @@ The Bootstrap Multiselect jquery plugin present in this bundle is from [davidstu
 
 Add the repository to your composer.json
 
-    "rc2c/multi-select-bundle": "dev-master"
+    "rc2c/form-twitter-bundle": "dev-master"
 
 Run Composer to install the bundle
 
-    php composer.phar update rc2c/multi-select-bundle
+    php composer.phar update rc2c/form-twitter-bundle
 
 Enable the bundle in AppKernel.php
 
 ```php    
-    new Rc2c\MultiSelectBundle\Rc2cMultiSelectBundle(),
+    new Rc2c\FormTwitterBundle\Rc2cFormTwitterBundle(),
 ```
 
-## Usage
+## Multiselect
 
+The Bootstrap Multiselect jquery plugin present in this bundle is from [davidstutz](https://github.com/davidstutz/bootstrap-multiselect).
 Use the new form type in a buildForm method in remplacement of a choice type
 
 ```php

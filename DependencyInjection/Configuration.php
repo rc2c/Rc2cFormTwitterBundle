@@ -1,6 +1,6 @@
 <?php
 
-namespace Rc2c\MultiSelectBundle\DependencyInjection;
+namespace Rc2c\Rc2cFormTwitterBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('rc2c_multi_select');
+        $rootNode = $treeBuilder->root('rc2c_form_twitter');
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for

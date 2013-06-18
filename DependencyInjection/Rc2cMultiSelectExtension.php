@@ -1,6 +1,6 @@
 <?php
 
-namespace Rc2c\MultiSelectBundle\DependencyInjection;
+namespace Rc2c\Rc2cFormTwitterBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
@@ -12,7 +12,7 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class Rc2cMultiSelectExtension extends Extension
+class Rc2cFormTwitterExtension extends Extension
 {
     /**
      * {@inheritDoc}
@@ -42,7 +42,7 @@ class Rc2cMultiSelectExtension extends Extension
                 $container->hasParameter('twig.form.resources')
                     ? $container->getParameter('twig.form.resources')
                     : array(),
-                array('Rc2cMultiSelectBundle:Form:fields.html.twig')
+                array('Rc2cFormTwitterBundle:Form:fields.html.twig')
             ));
         }
     }
