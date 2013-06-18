@@ -21,7 +21,7 @@
         "symfony/form": ">=2.1"
     },
     "autoload": {
-        "psr-0": { "Rc2c\\Rc2cFormTwitterBundle": "" }
+        "psr-0": { "Rc2c\\FormTwitterBundle": "" }
     },
-    "target-dir": "Rc2c/Rc2cFormTwitterBundle"
+    "target-dir": "Rc2c/FormTwitterBundle"
 }
