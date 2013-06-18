@@ -96,3 +96,37 @@
         </script>
     {% endspaceless %}
 {% endblock %}
+
+{% block buttongroupchoice_widget %}
+    {% spaceless %}
+        <div data-toggle-name="{{ full_name }}" class="btn-group" data-toggle="buttons-radio" {{ block('widget_container_attributes') }}>
+            {% for choice in choices %}
+                 <button type="button" value="{{ choice.value }}" class="btn{% if choice.value == data %} active{% endif %}" data-toggle="button">{{ choice.label|trans({}, translation_domain) }}</button>
+            {% endfor %}
+        </div>
+        <input type="hidden" value="{{data}}" name="{{ full_name }}" />
+        <script language="javascript">
+            jQuery(function($) {
+                $('div.btn-group[data-toggle-name="{{ full_name }}"]').each(function()
+                {
+                    var group   = $(this);
+                    var form    = group.parents('form').eq(0);
+                    var name    = group.attr('data-toggle-name');
+                    var hidden  = $('input[name="' + name + '"]', form);
+                    $('button', group).each(function()
+                    {
+                        var button = $(this);
+                        button.live('click', function()
+                        {
+                            hidden.val($(this).val());
+                        });
+                        if (button.val() == hidden.val()) 
+                        {
+                            button.addClass('active');
+                        }
+                    });
+                });
+            });
+        </script>
+    {% endspaceless %}
+{% endblock %}
