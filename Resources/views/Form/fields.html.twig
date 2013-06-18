@@ -99,12 +99,12 @@
 
 {% block buttongroupchoice_widget %}
     {% spaceless %}
-        <div data-toggle-name="{{ full_name }}" class="btn-group" data-toggle="buttons-radio" {{ block('widget_container_attributes') }}>
+        <div data-toggle-name="{{ full_name }}" class="btn-group" data-toggle="buttons-radio">
             {% for choice in choices %}
                  <button type="button" value="{{ choice.value }}" class="btn{% if choice.value == data %} active{% endif %}" data-toggle="button">{{ choice.label|trans({}, translation_domain) }}</button>
             {% endfor %}
         </div>
-        <input type="hidden" value="{{data}}" name="{{ full_name }}" />
+        <input type="hidden" value="{{data}}" name="{{ full_name }}" id=" {{ id }}"/>
         <script language="javascript">
             jQuery(function($) {
                 $('div.btn-group[data-toggle-name="{{ full_name }}"]').each(function()
@@ -118,7 +118,7 @@
                         var button = $(this);
                         button.live('click', function()
                         {
-                            hidden.val($(this).val());
+                            hidden.val($(this).val()).trigger('change');
                         });
                         if (button.val() == hidden.val()) 
                         {
