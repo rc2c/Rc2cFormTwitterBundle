@@ -1,5 +1,5 @@
 {
-    "name": "rc2c/multi-select-bundle",
+    "name": "rc2c/form-twitter-bundle",
     "description": "Implementation of Bootstrap Form Types for Symfony 2",
     "keywords": ["form", "bootstrap", "multiselect", "symfony2"],
     "homepage": "https://github.com/rc2c/Rc2cFormTwitterBundle",
