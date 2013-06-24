@@ -10,7 +10,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 
 class MultiSelectChoiceType extends AbstractType
 {
-
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(

@@ -1,4 +1,4 @@
-{% block multiselectchoice_widget %}
+{% block multiselect %}
     {% spaceless %}
         <script src="{{ asset('bundles/rc2cformtwitter/js/bootstrap-multiselect.js') }}" type="text/javascript"></script>
         <div class="btn-group">
@@ -95,6 +95,14 @@
         });
         </script>
     {% endspaceless %}
+{% endblock %}
+
+{% block multiselectchoice_widget %}
+    {{ block('multiselect') }}
+{% endblock %}
+
+{% block multiselectentity_widget %}
+    {{ block('multiselect') }}
 {% endblock %}
 
 {% block buttongroupchoice_widget %}

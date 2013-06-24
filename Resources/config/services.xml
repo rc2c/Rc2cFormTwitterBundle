@@ -8,6 +8,9 @@
         <service id="form.type.multiselectchoice" class="Rc2c\FormTwitterBundle\Form\Type\MultiSelectChoiceType">
             <tag name="form.type" alias="multiselectchoice" />
         </service>
+        <service id="form.type.multiselectentity" class="Rc2c\FormTwitterBundle\Form\Type\MultiSelectEntityType">
+            <tag name="form.type" alias="multiselectentity" />
+        </service>
         <service id="form.type.buttongroupchoice" class="Rc2c\FormTwitterBundle\Form\Type\ButtonGroupChoiceType">
             <tag name="form.type" alias="buttongroupchoice" />
         </service>
