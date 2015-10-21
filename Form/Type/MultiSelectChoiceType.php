@@ -24,6 +24,7 @@ class MultiSelectChoiceType extends AbstractType
             'btnSelectAll' => true,
             'buttonClass'  => 'btn',
             'maxHeight'    => false,
+            'drop'         => 'down'
         ));
 
         $resolver->addAllowedValues(array(
@@ -40,6 +41,7 @@ class MultiSelectChoiceType extends AbstractType
         $builder->setAttribute('btnSelectAll', $options['btnSelectAll']);
         $builder->setAttribute('buttonClass', $options['buttonClass']);
         $builder->setAttribute('maxHeight', $options['maxHeight']);
+        $builder->setAttribute('drop', $options['drop']);
     }
 
     public function buildView(FormView $view, FormInterface $form, array $options)
@@ -47,6 +49,7 @@ class MultiSelectChoiceType extends AbstractType
         $view->vars['btnSelectAll'] = $form->getConfig()->getAttribute('btnSelectAll');
         $view->vars['buttonClass']  = $form->getConfig()->getAttribute('buttonClass');
         $view->vars['maxHeight']    = $form->getConfig()->getAttribute('maxHeight');
+        $view->vars['drop']         = $form->getConfig()->getAttribute('drop');
     }
 
     public function getParent()
